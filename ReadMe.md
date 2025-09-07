@@ -14,29 +14,26 @@ Estimated current:\
 - BMP581 sensor: ~300 µA\
 - External device powered from the UART header: up to 500 mA (worst case)\
 - Total worst-case current: ~1 A, so a 2 A buck converter gives plenty of margin.\
+
 The wiring follows the datasheet:\
 https://www.diodes.com/datasheet/download/AP63200-AP63201-AP63203-AP63205.pdf
 
 I also added:
 
-A diode on the input to prevent reverse current.
-A 2.5 A fuse for overcurrent protection.
+- A diode on the input to prevent reverse current.
+- A 2.5 A fuse for overcurrent protection.
 
 ### MCU
 
-I selected the ESP32-S3-WROOM-1 because:
-
-I’m familiar with the Arduino environment.
-It has integrated Wi-Fi, which can be useful for monitoring the sensor.
+I selected the ESP32-S3-WROOM-1 because I’m familiar with the Arduino environment and it has integrated Wi-Fi, which can be useful for monitoring the sensor.
 
 Key points:
 
-Two GPIO pins with pull-up resistors for I2C.
-USB_D+ and USB_D- wired for a USB-C connector.
-Enable and Reset buttons wired like the official devkit:
-https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-DevKitC-1_V1.1_20220413.pdf
-These buttons allow proper boot and reset if the MCU hangs.
-Added a heartbeat LED to check if the MCU is running.
+- Two GPIO pins with pull-up resistors for I2C.
+- USB_D+ and USB_D- wired for a USB-C connector.
+- Enable and Reset buttons wired like the official devkit: https://dl.espressif.com/dl/schematics/SCH_ESP32-S3-DevKitC-1_V1.1_20220413.pdf
+  These buttons allow proper boot and reset if the MCU hangs.
+- Added a heartbeat LED to check if the MCU is running.
 
 ### Sensor
 
@@ -47,9 +44,9 @@ A decoupling capacitor is placed near the sensor to stabilize the 3.3 V supply
 
 I added LEDs for:
 
-5 V
-3.3 V
-Heartbeat (MCU activity)
+- 5 V
+- 3.3 V
+- Heartbeat (MCU activity)
 
 ### USB-C
 
@@ -73,9 +70,9 @@ https://github.com/sparkfun/SparkFun_BMP581_Arduino_Library/blob/main/src/SparkF
     
 The driver includes:
 
-Initialization and configuration functions.
-I²C read/write functions.
-A read function that returns pressure and temperature.
+- Initialization and configuration functions.
+- I²C read/write functions.
+- A read function that returns pressure and temperature.
 
 ### Design Choices for Sensor Configuration
 I²C Address
