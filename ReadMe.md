@@ -9,12 +9,12 @@ I chose Molex connectors because they are reliable and don’t come loose easily
 
 I used the AP63203WU buck converter for 5 V to 3.3 V regulation. It can handle up to 2 A.
 
-Estimated current:
-    MCU: ~500 mA (at peak)
-    BMP581 sensor: ~300 µA
-    External device powered from the UART header: up to 500 mA (worst case)
-Total worst-case current: ~1 A, so a 2 A buck converter gives plenty of margin.
-The wiring follows the datasheet:
+Estimated current:\
+- MCU: ~500 mA (at peak)\
+- BMP581 sensor: ~300 µA\
+- External device powered from the UART header: up to 500 mA (worst case)\
+- Total worst-case current: ~1 A, so a 2 A buck converter gives plenty of margin.\
+The wiring follows the datasheet:\
 https://www.diodes.com/datasheet/download/AP63200-AP63201-AP63203-AP63205.pdf
 
 I also added:
